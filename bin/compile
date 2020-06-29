@@ -23,6 +23,7 @@ indent() {
 }
 
 VERSION="7.6.1"
+FILENAME="elasticsearch-$VERSION-linux_x86_64.tar.gz"
 INSTALL_DIR="$BUILD_DIR/.heroku/vendor/elasticsearch"
 PROFILE_PATH="$BUILD_DIR/.profile.d/elasticsearch.sh"
 
@@ -35,8 +36,8 @@ echo "Search in cache directory $CACHE_DIR/elasticsearch-$VERSION" | indent
 if [ ! -d $CACHE_DIR/elasticsearch-$VERSION ]; then
 	echo "Fetching and installing elasticsearch" | indent
 	cd $CACHE_DIR
-	curl -sOL "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$VERSION-linux-x86_64.tar.gz"
-	tar zxf "elasticsearch-$VERSION.tar.gz"
+	curl -sOL "https://artifacts.elastic.co/downloads/elasticsearch/$FILENAME"
+	tar zxf $FILENAME
 	cd "elasticsearch-$VERSION"
 	cp -r $CACHE_DIR/elasticsearch-$VERSION/* $INSTALL_DIR/
 else
