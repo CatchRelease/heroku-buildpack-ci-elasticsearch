@@ -23,7 +23,7 @@ indent() {
 }
 
 VERSION="7.6.1"
-FILENAME="elasticsearch-$VERSION-linux_x86_64.tar.gz"
+FILENAME="elasticsearch-$VERSION-linux-x86_64.tar.gz"
 INSTALL_DIR="$BUILD_DIR/.heroku/vendor/elasticsearch"
 PROFILE_PATH="$BUILD_DIR/.profile.d/elasticsearch.sh"
 
